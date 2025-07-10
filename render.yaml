@@ -1,7 +1,6 @@
 services:
   - type: web
     name: nse-option-signal-assistant
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
-    region: singapore
+    runtime: python
+    buildCommand: pip install uvicorn fastapi
+    startCommand: python -m uvicorn main:app --host 0.0.0.0 --port 10000
